@@ -1,4 +1,3 @@
-<img width="1359" height="1076" alt="3" src="https://github.com/user-attachments/assets/30f4341e-eb89-4bec-bef7-6fdc09f599f9" />## Цель работы
 Реализовать веб-приложение на базе Spring Boot и Spring Data JPA для выполнения базовых CRUD-операций с базой данных H2 для сущности "Военнослужащий" (Вариант 7).
 
 ## Архитектура проекта
