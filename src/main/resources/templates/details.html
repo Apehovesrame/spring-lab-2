@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о военнослужащем</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<div class="container">
+    <h1>Детальная информация</h1>
+
+    <div class="details-row">
+        <span class="details-label">ID:</span>
+        <span th:text="${serviceman.id}"></span>
+    </div>
+
+    <div class="details-row">
+        <span class="details-label">Фамилия:</span>
+        <span th:text="${serviceman.surname}"></span>
+    </div>
+
+    <div class="details-row">
+        <span class="details-label">Имя:</span>
+        <span th:text="${serviceman.name}"></span>
+    </div>
+
+    <div class="details-row">
+        <span class="details-label">Отчество:</span>
+        <span th:text="${serviceman.patronymic}"></span>
+    </div>
+
+    <div class="details-row">
+        <span class="details-label">Национальность:</span>
+        <span th:text="${serviceman.nationality}"></span>
+    </div>
+
+    <div class="details-row">
+        <span class="details-label">Дата рождения:</span>
+        <span th:text="${serviceman.birthDate}"></span>
+    </div>
+
+    <div class="details-row">
+        <span class="details-label">Должность:</span>
+        <span th:text="${serviceman.position}"></span>
+    </div>
+
+    <div class="details-row">
+        <span class="details-label">Звание:</span>
+        <span th:text="${serviceman.rank}"></span>
+    </div>
+
+    <div style="margin-top: 25px;">
+        <a th:href="@{'/servicemen/edit/' + ${serviceman.id}}" class="btn btn-warning">Редактировать</a>
+        <a th:href="@{/servicemen}" class="btn btn-secondary">Вернуться к списку</a>
+    </div>
+</div>
+</body>
+</html>

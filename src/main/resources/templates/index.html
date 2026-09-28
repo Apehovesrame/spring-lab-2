@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список военнослужащих</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<div class="container">
+    <h1>Учет военнослужащих (Вариант 7)</h1>
+
+    <a th:href="@{/servicemen/add}" class="btn btn-primary" style="margin-bottom: 15px;">+ Добавить военнослужащего</a>
+
+    <span th:if="${servicemen.size() == 0}">База данных пуста.</span>
+
+    <table th:if="${servicemen.size() > 0}">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>ФИО</th>
+            <th>Должность</th>
+            <th>Звание</th>
+            <th>Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="person : ${servicemen}">
+            <td th:text="${person.id}"></td>
+            <td th:text="${person.surname} + ' ' + ${person.name} + ' ' + ${person.patronymic}"></td>
+            <td th:text="${person.position}"></td>
+            <td th:text="${person.rank}"></td>
+            <td>
+                <a class="btn btn-secondary" th:href="@{'/servicemen/details/' + ${person.id}}">Инфо</a>
+                <a class="btn btn-warning" th:href="@{'/servicemen/edit/' + ${person.id}}">Изменить</a>
+                <a class="btn btn-danger" th:href="@{'/servicemen/delete/' + ${person.id}}">Удалить</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
